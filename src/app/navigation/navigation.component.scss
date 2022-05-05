@@ -1,0 +1,16 @@
+.nav.nav-pills {
+  margin-top: 15px;
+  background-color: rgb(230, 230, 230);
+}
+
+.nav-item a {
+  border-radius: 25px;
+  color: rgb(60, 153, 190);
+}
+
+.nav-item.active {
+  background-color: rgb(60, 153, 190);
+  a {
+    color: white;
+  }
+}

@@ -1,0 +1,32 @@
+<div class="card-layout">
+  <ng-container *ngFor="let item of itemStock">
+    <div
+      class="card-wrapper"
+      [ngClass]="showItem(item.itemFilterName) ? 'hide' : 'show'"
+    >
+      <div
+        class="out-of-stock-overlay"
+        [ngClass]="item.itemInStock ? 'in-stock' : 'out-of-stock'"
+      >
+        OUT OF STOCK
+      </div>
+      <div class="loading-element" id={{item.itemId}}>
+        <div class="background"></div>
+      </div>
+      <div class="card-component" (click)="addToOrder(item)">
+        <img src="{{ item.itemImageUrl }}" class="card-img" />
+        <div class="title">{{ item.itemName }}</div>
+        <div class="footer">
+          <div class="price">{{ item.itemPrice }}</div>
+          <div
+            class="stock"
+            [ngClass]="item.itemInStock ? 'in-stock' : 'out-of-stock'"
+          >
+            {{ item.itemInStock ? "In Stock" : "Out of Stock" }}
+          </div>
+        </div>
+        <div class="added-to-order" *ngIf="getOrderCount(item.itemId) >0">{{getOrderCount(item.itemId)}}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>

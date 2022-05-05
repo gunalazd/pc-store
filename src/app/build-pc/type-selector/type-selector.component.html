@@ -1,0 +1,26 @@
+<div id="accordion" role="tablist">
+  <div class="card" *ngFor="let filter of this.filters; let y = index">
+    <div class="type header" (click)="toggleShowSection(collapsible)">
+      {{ filter.mainFilter }}
+    </div>
+    <div class="type collapse show" #collapsible>
+      <div class="type-list">
+        <div
+          class="custom-control custom-checkbox"
+          *ngFor="let component of filter.filterValues; let i = index"
+        >
+          <input
+            type="checkbox"
+            [checked]="component.checked"
+            class="custom-control-input"
+            id="customCheck{{ y }}{{ i }}"
+            (change)="onCheckboxChange($event, i, y)"
+          />
+          <label class="custom-control-label" for="customCheck{{ y }}{{ i }}">{{
+            component.value
+          }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

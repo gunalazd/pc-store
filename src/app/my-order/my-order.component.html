@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="order-wrapper">
+    <ng-container *ngFor="let item of uniqueStock">
+      <div
+        class="order-item"
+        [ngClass]="getOrderCount(item.itemId) > 0 ? 'show' : 'hide'"
+      >
+        <div class="item-info-text">
+          <div class="text-wrapper">
+            <div class="name">{{ item.itemName }}</div>
+            <div class="price">{{ item.itemPrice }}£</div>
+          </div>
+
+          <img src="{{ item.itemImageUrl }}" />
+        </div>
+
+        <div class="modify-order">
+          <div class="edit-buttons" (click)="addOrderItem(item.itemId)">
+            <img src="/assets/add.svg" alt="" />
+          </div>
+          <div class="count">{{ getOrderCount(item.itemId) }}</div>
+          <div class="edit-buttons" (click)="removeOrderItem(item.itemId)">
+            <img class="edit-buttons" src="/assets/remove.svg" alt="" />
+          </div>
+          <div class="edit-buttons">
+            <img class="edit-buttons delete" src="/assets/delete.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

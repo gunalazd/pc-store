@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  & .order-wrapper {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 560px;
+    // background-color: bisque;
+    & .order-item {
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      position: relative;
+      background-color: #3c99be;
+      box-shadow: 0 0px 10px rgb(0 0 0 / 18%) !important;
+
+      &.hide{
+        display: none;
+      }
+      & .item-info-text{
+        color: #ffffff;
+        width: 550px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // background-color: aqua;
+        justify-content: space-between;
+        margin-left: 15px;
+
+
+        & .name{
+          font-size: 26px;
+          margin-bottom:5px;
+        }
+
+        & .price{
+          font-size: 20px;
+        }
+      }
+      & .item-info-text > img {
+        height: 90px;
+        width: 90px;
+      }
+
+      & .modify-order {
+        right: 0;
+        // background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: row;
+        margin: 0 15px;
+        // position: absolute;
+        height: 100px;
+        // & .add{
+        //   width: 50px;
+        // }
+        // & .remove{
+        //   width: 50px;
+        // }
+        & .edit-buttons {
+          cursor: pointer;
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          &.delete {
+            margin-left: 15px;
+          }
+          & img {
+            width: 25px;
+            &:hover {
+              width: 35px;
+            }
+          }
+        }
+        & .count {
+          width: 50px;
+          height: 50px;
+          margin-top: 25px;
+          border-radius: 25px;
+          background-color: white;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
